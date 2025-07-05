@@ -10,8 +10,8 @@ from sentence_transformers import SentenceTransformer
 if __name__ == "__main__":
     # Load an image with a crazy cat.
     response = requests.get(
-        "https://github.com/PacktPublishing/LLM-Engineering/blob/main/images/crazy_cat.jpg?raw=true"
-    )
+        "https://github.com/PacktPublishing/LLM-Engineering/blob/main/images/crazy_cat.jpg?raw=true", 
+    timeout=60)
     image = Image.open(BytesIO(response.content))
 
     # Load CLIP model.
